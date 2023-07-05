@@ -16,7 +16,7 @@ ENV GENERICCACHE_VERSION=2 \
     UPSTREAM_DNS="8.8.8.8 8.8.4.4" \
     BEAT_TIME=1h \
     LOGFILE_RETENTION=3560 \
-    CACHE_DOMAINS_REPO="https://github.com/uklans/cache-domains.git" \
+    CACHE_DOMAINS_REPO="https://github.com/sat437/cache-domains-with-linux.git" \
     CACHE_DOMAINS_BRANCH=master \
     NGINX_WORKER_PROCESSES=auto \
     NGINX_LOG_FORMAT=cachelog
@@ -40,7 +40,7 @@ RUN rm /etc/nginx/sites-enabled/* /etc/nginx/stream-enabled/* ;\
     mkdir -m 755 -p /data/cachedomains		;\
     mkdir -m 755 -p /tmp/nginx
 
-RUN git clone --depth=1 --no-single-branch https://github.com/uklans/cache-domains/ /data/cachedomains
+RUN git clone --depth=1 --no-single-branch https://github.com/sat437/cache-domains-with-linux/ /data/cachedomains
 
 VOLUME ["/data/logs", "/data/cache", "/data/cachedomains", "/var/www"]
 
